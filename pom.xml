@@ -1,0 +1,30 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>whisperTextExtractor</groupId>
+  <artifactId>whisperTextExtractor</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>whisperTextExtractor</name>
+  <dependencies>
+	<dependency>
+	    <groupId>io.github.givimad</groupId>
+	    <artifactId>whisper-jni</artifactId>
+	    <version>1.5.4-0</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.bramp.ffmpeg</groupId>
+	  <artifactId>ffmpeg</artifactId>
+	  <version>0.8.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.miglayout/miglayout-swing -->
+	<dependency>
+	    <groupId>com.miglayout</groupId>
+	    <artifactId>miglayout-swing</artifactId>
+	    <version>11.3</version>
+	</dependency>
+	<dependency>
+	  <groupId>com.github.weisj</groupId>
+	  <artifactId>darklaf-core</artifactId>
+	  <version>3.0.2</version>
+	</dependency>
+  </dependencies>
+</project>
