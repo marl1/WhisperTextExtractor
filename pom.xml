@@ -46,8 +46,8 @@
 	</dependency>
   </dependencies>
   <profiles>
-			<profile>
-			<id>dl-windows-jdk</id>
+		<profile>
+			<id>windows-pkg</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -79,6 +79,7 @@
 						</executions>
 					</plugin>
 					<plugin>
+						<!-- To generate a smallish jdk tailored to the app -->
 					    <groupId>org.moditect</groupId>
 					    <artifactId>moditect-maven-plugin</artifactId>
 					    <version>1.0.0.Final</version>
@@ -93,24 +94,50 @@
 					                <modulePath>${project.build.directory}${file.separator}jdkCache${file.separator}ADOPTIUM_21u_2024-01-21-02-59_windows_x64_hotspot${file.separator}jmods</modulePath>
 					                <modules>
 					                    <module>java.base</module>
+					                    <module>java.desktop</module>
+					                    <module>java.naming</module>
 					                </modules>
 					                <launcher>
-										<module>module-info.java</module>
+										<module>fr.wtx</module>
 										<mainClass>fr.wtx.Main</mainClass>
 					                </launcher>
 					                <compression>2</compression>
+					                <noHeaderFiles>true</noHeaderFiles>
 					                <stripDebug>true</stripDebug>
-					                <outputDirectory>${project.build.directory}/jlink-image</outputDirectory>
+					                <noManPages>true</noManPages>
+					                <outputDirectory>${project.build.directory}/${project.name}-${project.version}-windows</outputDirectory>
 					                <jarInclusionPolicy>APP_WITH_DEPENDENCIES</jarInclusionPolicy>
 					            </configuration>
 					        </execution>
 					    </executions>
 					</plugin>
+					<plugin>
+						<artifactId>maven-resources-plugin</artifactId>
+						<version>3.3.1</version>
+						<executions>
+							<execution>
+								<id>copy-scripts</id>
+								<phase>package</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${basedir}/target/${project.name}-${project.version}-windows</outputDirectory>
+									<resources>
+										<resource>
+											<directory>scripts/windows</directory>
+											<filtering>false</filtering>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
 		<profile>
-			<id>dl-linux-jdk</id>
+			<id>linux-pkg</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -141,75 +168,66 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+					    <groupId>org.moditect</groupId>
+					    <artifactId>moditect-maven-plugin</artifactId>
+					    <version>1.0.0.Final</version>
+					    <executions>
+					        <execution>
+					            <id>create-runtime-image</id>
+					            <phase>package</phase>
+					            <goals>
+					                <goal>create-runtime-image</goal>
+					            </goals>
+					            <configuration>
+					                <modulePath>${project.build.directory}${file.separator}jdkCache${file.separator}ADOPTIUM_21u_2024-01-21-02-59_linux_x64_hotspot${file.separator}jmods</modulePath>
+					                <modules>
+					                    <module>java.base</module>
+					                    <module>java.desktop</module>
+					                    <module>java.naming</module>
+					                </modules>
+					                <launcher>
+										<module>module-info.java</module>
+										<mainClass>fr.wtx.Main</mainClass>
+					                </launcher>
+					                <compression>2</compression>
+					                <noHeaderFiles>true</noHeaderFiles>
+					                <stripDebug>true</stripDebug>
+					                <noManPages>true</noManPages>
+					                <outputDirectory>${project.build.directory}/${project.name}-${project.version}-linux</outputDirectory>
+					                <jarInclusionPolicy>APP_WITH_DEPENDENCIES</jarInclusionPolicy>
+					            </configuration>
+					        </execution>
+					    </executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-resources-plugin</artifactId>
+						<version>3.3.1</version>
+						<executions>
+							<execution>
+								<id>copy-scripts</id>
+								<phase>package</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${basedir}/target/${project.name}-${project.version}-linux</outputDirectory>
+									<resources>
+										<resource>
+											<directory>scripts/linux</directory>
+											<filtering>false</filtering>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
   </profiles>
   <build>
 	  <plugins>
-		<plugin>
-				<!-- Plugin needed to avoid the error "automatic module cannot be used with jlink" to inject module info to dependencies that doesn't have it -->
-				<groupId>org.moditect</groupId>
-				<artifactId>moditect-maven-plugin</artifactId>
-				<version>1.0.0.RC2</version>
-				<executions>
-					<execution>
-						<id>add-module-infos</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>add-module-info</goal>
-						</goals>
-						<configuration>
-							<overwriteExistingFiles>true</overwriteExistingFiles>
-							<outputDirectory>${project.build.directory}${file.separator}modules</outputDirectory>
-							<modules>
-								<module>
-									<artifact>
-								    <groupId>io.github.givimad</groupId>
-								    <artifactId>whisper-jni</artifactId>
-								    <version>1.5.4-0</version>
-									</artifact>
-									<!-- I generated the module-info using "jdeps.exe dashdash generate-module-info out whisper-jni-1.5.4-0.jar" and copy/pasted here -->
-									<moduleInfoSource>
-										module whisper.jni {
-										    exports io.github.givimad.whisperjni;
-										    exports io.github.givimad.whisperjni.internal;
-
-										}
-		                        </moduleInfoSource>
-								</module>
-																<module>
-									<artifact>
-								    <groupId>net.bramp.ffmpeg</groupId>
-								    <artifactId>ffmpeg</artifactId>
-								    <version>0.8.0</version>
-									</artifact>
-									<moduleInfoSource>
-										module ffmpeg {
-										    requires transitive java.desktop;
-										
-										    exports net.bramp.commons.lang3.math.gson;
-										    exports net.bramp.ffmpeg;
-										    exports net.bramp.ffmpeg.builder;
-										    exports net.bramp.ffmpeg.gson;
-										    exports net.bramp.ffmpeg.info;
-										    exports net.bramp.ffmpeg.io;
-										    exports net.bramp.ffmpeg.job;
-										    exports net.bramp.ffmpeg.modelmapper;
-										    exports net.bramp.ffmpeg.nut;
-										    exports net.bramp.ffmpeg.options;
-										    exports net.bramp.ffmpeg.probe;
-										    exports net.bramp.ffmpeg.progress;
-										
-										}
-
-		                        </moduleInfoSource>
-								</module>
-								</modules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			  <plugin>
 			      <!-- Build an executable JAR wihtout dependencies included -->
 			      <groupId>org.apache.maven.plugins</groupId>
