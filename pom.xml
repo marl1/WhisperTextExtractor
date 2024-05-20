@@ -210,6 +210,20 @@
 					</execution>
 				</executions>
 			</plugin>
+			  <plugin>
+			      <!-- Build an executable JAR wihtout dependencies included -->
+			      <groupId>org.apache.maven.plugins</groupId>
+			      <artifactId>maven-jar-plugin</artifactId>
+			      <version>3.1.0</version>
+			      <configuration>
+			        <archive>
+			          <manifest>
+			            <addClasspath>true</addClasspath>
+			            <mainClass>fr.wtx.Main</mainClass>
+			          </manifest>
+			        </archive>
+			      </configuration>
+		    </plugin>
             <plugin>
 				<!-- fat jar -->
 	            <groupId>org.apache.maven.plugins</groupId>
