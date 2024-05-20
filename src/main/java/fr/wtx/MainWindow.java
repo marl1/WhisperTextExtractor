@@ -1,13 +1,16 @@
 package fr.wtx;
 
+import java.awt.Color;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Properties;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -18,10 +21,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingUtilities;
+import javax.swing.border.TitledBorder;
+
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.github.weisj.darklaf.LafManager;
 
@@ -30,17 +40,26 @@ import net.miginfocom.swing.MigLayout;
 
 public class MainWindow extends JFrame {
 	
+	private static final Logger LOGGER = LoggerFactory.getLogger(MainWindow.class);	
+	
 	private JTextField ffmpegPathTextField = new JTextField("");
 	private JTextField ffprobePathTextField = new JTextField("");
 	private JTextField modelPathTextField = new JTextField("");
 	private JTextField audioOrVideoPathTextField = new JTextField("");
 	private JTextField tempPathTextField = new JTextField("");
+	private JTextArea textArea = new JTextArea("");
 	
-	private JComboBox languagesComboBox;
+	private JComboBox<String> languagesComboBox;
+	
+	private JCheckBox translateCheckBox;
+	
+	private JLabel progressText;
+	private JProgressBar progressBar;
 	
 	public MainWindow() {
+		
 		LafManager.install();
-	    this.setTitle("");
+	    this.setTitle("WhisperTextExtractor");
 	    this.setSize(600, 800);
 	    this.setLocationRelativeTo(null);
 
@@ -52,9 +71,9 @@ public class MainWindow extends JFrame {
 
 	    // FFmpeg options
 	    JLayeredPane ffmpegPanel = new JLayeredPane();
-	    ffmpegPanel.setEnabled(false);
 	    ffmpegPanel.setLayout(new MigLayout());
 	    ffmpegPanel.setBorder(BorderFactory.createTitledBorder("FFmpeg options"));
+	    ((TitledBorder)ffmpegPanel.getBorder()).setTitleColor(Color.gray);
 	    panel.add(ffmpegPanel, "width 100%, wrap");
 	    ffmpegPanel.add(new JLabel("FFmpeg executable path:"), "wrap");
 	    ffmpegPanel.add(ffmpegPathTextField, "width 100%");
@@ -67,11 +86,11 @@ public class MainWindow extends JFrame {
 	    
 	    // Whisper.cpp options
 	    JLayeredPane whisperPanel = new JLayeredPane();
-	    whisperPanel.setEnabled(false);
 	    whisperPanel.setLayout(new MigLayout(""));
 	    whisperPanel.setBorder(BorderFactory.createTitledBorder("Whisper.cpp options"));
+	    ((TitledBorder)whisperPanel.getBorder()).setTitleColor(Color.gray);
 	    panel.add(whisperPanel, "width 100%");
-	    whisperPanel.add(new JLabel("Model path:"), "wrap");
+	    whisperPanel.add(new JLabel("Whisper model path:"), "wrap");
 	    whisperPanel.add(modelPathTextField, "span 3, width 100%");
 	    whisperPanel.add(createPathSelectorButton(modelPathTextField), " wrap");
 	    
@@ -87,17 +106,19 @@ public class MainWindow extends JFrame {
 	    languagesComboBox = new JComboBox<String>(languages);
 	    whisperPanel.add(new JLabel("Language (optional):"));
 	    whisperPanel.add(languagesComboBox, "");
-	    whisperPanel.add(new JCheckBox("Try to translate in English"), "align left");
+	    translateCheckBox = new JCheckBox("Try to translate in English");
+	    whisperPanel.add(translateCheckBox, "align left");
 
 	    // Extraction options
 	    JLayeredPane runPanel = new JLayeredPane();
 	    runPanel.setBorder(BorderFactory.createTitledBorder("Extraction"));
+	    ((TitledBorder)runPanel.getBorder()).setTitleColor(Color.gray);
 	    runPanel.setLayout(new MigLayout(""));
 	    panel.add(runPanel, "width 100%, height 100%, newline");
 	    runPanel.add(new JLabel("Audio/Video file to extract text from:"), "wrap");
 	    runPanel.add(audioOrVideoPathTextField, "split2, width 100%");
 	    runPanel.add(createPathSelectorButton(audioOrVideoPathTextField), " wrap");
-	    runPanel.add(new JLabel("Temporary output directory:"), "wrap");
+	    runPanel.add(new JLabel("A temporary file will be created on this folder:"), "wrap");
 	    runPanel.add(tempPathTextField, "split2, width 100%");
 		JButton loadOutputTempDirectoryButton = new JButton("...");
 		loadOutputTempDirectoryButton.addActionListener(directorySelection(tempPathTextField));
@@ -108,13 +129,17 @@ public class MainWindow extends JFrame {
 	    
 	    runPanel.add(extractTextButton, "width 100%, wrap");
 	    
-	    JTextArea textArea = new JTextArea("");
+	    
 	    JScrollPane textAreaScrollPanel = new JScrollPane(textArea);
 	    textAreaScrollPanel.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 	    textArea.setWrapStyleWord(true);
 	    textArea.setLineWrap(true);
 	    runPanel.add(textAreaScrollPanel, "width 100%, height 100%, wrap");
-
+	    progressText = new JLabel();
+	    runPanel.add(progressText, "wrap");
+	    progressBar = new JProgressBar();
+	    runPanel.add(progressBar, "width 100%");
+	    loadProperties();
 	    this.setVisible(true);
 
 	}
@@ -149,18 +174,69 @@ public class MainWindow extends JFrame {
 	}
 	
 	private void launchExtraction() {
-		System.out.println("Extraction !!!!");
-			new FileConvertor().convert(
-					this.ffmpegPathTextField.getText(),
-					this.ffprobePathTextField.getText(),
-					this.audioOrVideoPathTextField.getText(),
-					this.tempPathTextField.getText()
-					);
+		saveProperties();
+		progressText.setText("Converting file...");
+		progressBar.setIndeterminate(true);
+	    // Create a new thread for the conversion and extraction processes
+	    new Thread(() -> {
+	        File outputFile = new FileConvertor().convert(
+	                ffmpegPathTextField.getText(),
+	                ffprobePathTextField.getText(),
+	                audioOrVideoPathTextField.getText(),
+	                tempPathTextField.getText()
+	        );
+	        SwingUtilities.invokeLater(() -> progressText.setText("Extracting text..."));
+	        progressText.setText("Extracting text from audio...");
+	        String extractedText = new TextExtractor().extract(
+	                outputFile.toString(),
+	                languagesComboBox.getItemAt(languagesComboBox.getSelectedIndex()),
+	                translateCheckBox.isSelected(),
+	                modelPathTextField.getText()
+	        );
+
+	        // Update the text area on the Event Dispatch Thread
+	        SwingUtilities.invokeLater(() -> textArea.setText(extractedText));
+	        SwingUtilities.invokeLater(() -> progressText.setText("Done."));
+	        SwingUtilities.invokeLater(() -> progressBar.setIndeterminate(false));
+	        SwingUtilities.invokeLater(() -> progressBar.setValue(100));
+	    }).start();
+	}
+	
+	private void loadProperties() {
+	    Properties prop = new Properties();
+	    Path configPath = Path.of(System.getProperty("user.dir"), "config.properties");
+
+	    try (InputStream in = Files.newInputStream(configPath)) {
+	        prop.load(in);	        
+	        this.ffmpegPathTextField.setText(prop.getProperty("ffmpeg.path"));
+	        this.ffprobePathTextField.setText(prop.getProperty("ffprobe.path"));
+	        this.audioOrVideoPathTextField.setText(prop.getProperty("audioOrVideo.path"));
+	        this.tempPathTextField.setText(prop.getProperty("temp.path"));
+	        this.modelPathTextField.setText(prop.getProperty("model.path"));
+	    } catch (IOException e) {
+	        LOGGER.error("Couldn't load the config.", e);
+	    }
+	    
+        if (StringUtils.isBlank(this.modelPathTextField.getText())) {
+	        this.tempPathTextField.setText(System.getProperty("user.dir"));
+        }
 
 	}
 
+	private void saveProperties() {
+		Properties prop = new Properties();
+	    Path configPath = Path.of(System.getProperty("user.dir"), "config.properties");
 
-
-	
+	    try (OutputStream out = Files.newOutputStream(configPath)) {
+	    	prop.setProperty("ffmpeg.path", this.ffmpegPathTextField.getText());
+	    	prop.setProperty("ffprobe.path", this.ffprobePathTextField.getText());
+	    	prop.setProperty("audioOrVideo.path", this.audioOrVideoPathTextField.getText());
+	    	prop.setProperty("temp.path", this.tempPathTextField.getText());
+	    	prop.setProperty("model.path", this.modelPathTextField.getText());
+	    	prop.store(out, "");
+	    } catch (IOException e) {
+	        LOGGER.error("Couldn't save the config.", e);
+	    }
+	}
 	
 }

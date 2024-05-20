@@ -57,3 +57,517 @@ Caused by: java.io.IOException: CreateProcess error=5, Access is denied
 2024-05-19 20:08:39,250 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\bagel.m4a -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\Users\User\Desktop;temp.wav
 2024-05-19 20:11:41,457 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
 2024-05-19 20:11:41,530 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\bagel.m4a -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-19 20:22:35,111 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-19 20:22:35,181 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\bagel.m4a -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-19 20:24:27,274 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-19 20:24:27,306 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-19 20:26:09,626 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-19 20:26:09,654 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-19 20:30:00,806 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-19 20:30:00,874 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 11:48:14,624 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\crea\projets\whisperTextExtractor\temp.wav -version
+2024-05-20 11:48:14,647 ERROR [AWT-EventQueue-0] f.w.FileConvertor [FileConvertor.java:52] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\crea\projets\whisperTextExtractor\temp.wav": CreateProcess error=193, %1 is not a valid Win32 application
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.launchExtraction(MainWindow.java:164)
+	at fr.wtx.MainWindow.lambda$0(MainWindow.java:117)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2313)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at com.github.weisj.darklaf.ui.button.DarkButtonListener.mouseReleased(DarkButtonListener.java:73)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6626)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3389)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6391)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2266)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5001)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4833)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4575)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2780)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4833)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:97)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: java.io.IOException: CreateProcess error=193, %1 is not a valid Win32 application
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:499)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	... 45 common frames omitted
+2024-05-20 11:48:15,877 ERROR [AWT-EventQueue-0] f.w.TextExtractor [TextExtractor.java:46] -- Couldn't read wav file.
+java.io.FileNotFoundException: C:\crea\projets\whisperTextExtractor\target\temp.wav (The system cannot find the file specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.desktop/com.sun.media.sound.SunFileReader.getAudioInputStream(SunFileReader.java:117)
+	at java.desktop/javax.sound.sampled.AudioSystem.getAudioInputStream(AudioSystem.java:1062)
+	at fr.wtx.TextExtractor.readFile(TextExtractor.java:95)
+	at fr.wtx.TextExtractor.extract(TextExtractor.java:44)
+	at fr.wtx.MainWindow.launchExtraction(MainWindow.java:170)
+	at fr.wtx.MainWindow.lambda$0(MainWindow.java:117)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2313)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at com.github.weisj.darklaf.ui.button.DarkButtonListener.mouseReleased(DarkButtonListener.java:73)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6626)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3389)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6391)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2266)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5001)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4833)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4575)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2780)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4833)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:97)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2024-05-20 11:49:45,351 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\crea\projets\whisperTextExtractor\wte.log -version
+2024-05-20 11:49:45,356 ERROR [AWT-EventQueue-0] f.w.FileConvertor [FileConvertor.java:52] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\crea\projets\whisperTextExtractor\wte.log": CreateProcess error=32, The process cannot access the file because it is being used by another process
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.launchExtraction(MainWindow.java:164)
+	at fr.wtx.MainWindow.lambda$0(MainWindow.java:117)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2313)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at com.github.weisj.darklaf.ui.button.DarkButtonListener.mouseReleased(DarkButtonListener.java:73)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6626)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3389)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6391)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2266)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5001)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4833)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4575)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2780)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4833)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:97)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: java.io.IOException: CreateProcess error=32, The process cannot access the file because it is being used by another process
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:499)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	... 45 common frames omitted
+2024-05-20 12:09:38,453 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:09:38,816 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:17:31,924 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:17:31,954 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:21:48,615 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:21:48,686 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:29:15,840 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:29:15,919 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:30:09,975 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:30:10,044 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:30:10,232 ERROR [AWT-EventQueue-0] f.w.TextExtractor [TextExtractor.java:75] -- error
+java.lang.NullPointerException: Cannot invoke "java.net.URL.getFile()" because the return value of "java.lang.ClassLoader.getResource(String)" is null
+	at fr.wtx.TextExtractor.extract(TextExtractor.java:38)
+	at fr.wtx.MainWindow.launchExtraction(MainWindow.java:174)
+	at fr.wtx.MainWindow.lambda$0(MainWindow.java:121)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2313)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at com.github.weisj.darklaf.ui.button.DarkButtonListener.mouseReleased(DarkButtonListener.java:73)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6626)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3389)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6391)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2266)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5001)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4833)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4575)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2780)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4833)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:97)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2024-05-20 12:31:09,055 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:31:09,124 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:32:46,033 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:32:46,103 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:33:22,366 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:33:22,435 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:37:02,544 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:37:02,615 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 44100 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:38:52,645 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:38:52,713 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:40:34,080 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:40:34,149 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 8000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:42:44,416 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:42:44,485 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 8000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:47:25,704 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:47:25,779 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:49:08,426 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:49:08,454 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:49:53,745 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:49:53,771 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:50:34,094 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:50:34,163 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:51:43,025 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:51:43,055 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:57:43,525 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:57:43,597 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 12:58:31,406 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 12:58:31,471 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:03:22,296 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:03:22,362 INFO [AWT-EventQueue-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:10:05,874 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:10:05,944 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:11:04,917 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:11:04,987 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:16:45,720 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:16:45,789 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:18:05,378 INFO [Thread-3] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:18:05,407 INFO [Thread-3] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:21:14,998 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:21:15,065 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\crea\projets\whisperTest\src\main\resources\moon.wav -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:21:33,690 INFO [Thread-3] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:21:33,721 INFO [Thread-3] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\crea\projets\whisperTest\src\main\resources\moon.wav -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:25:12,702 ERROR [main] f.w.MainWindow [MainWindow.java:221] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:209)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:142)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:26:33,843 ERROR [main] f.w.MainWindow [MainWindow.java:222] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:210)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:143)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:26:46,113 ERROR [main] f.w.MainWindow [MainWindow.java:222] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:210)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:143)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:29:16,995 ERROR [main] f.w.MainWindow [MainWindow.java:221] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:209)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:142)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:29:21,214 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\crea\projets\whisperTextExtractor\temp.wav -version
+2024-05-20 13:29:21,220 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\crea\projets\whisperTextExtractor\temp.wav": CreateProcess error=193, %1 is not a valid Win32 application
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:182)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: CreateProcess error=193, %1 is not a valid Win32 application
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:499)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	... 9 common frames omitted
+2024-05-20 13:29:21,339 ERROR [Thread-0] f.w.TextExtractor [TextExtractor.java:57] -- Couldn't open path to whisper model.
+java.io.IOException: Missing model file: 
+	at io.github.givimad.whisperjni.WhisperJNI.assertModelExists(WhisperJNI.java:495)
+	at io.github.givimad.whisperjni.WhisperJNI.init(WhisperJNI.java:84)
+	at io.github.givimad.whisperjni.WhisperJNI.init(WhisperJNI.java:72)
+	at fr.wtx.TextExtractor.extract(TextExtractor.java:55)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-05-20 13:30:49,086 ERROR [main] f.w.MainWindow [MainWindow.java:217] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:209)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:142)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:31:02,786 ERROR [main] f.w.MainWindow [MainWindow.java:217] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:209)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:142)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:32:12,813 ERROR [main] f.w.MainWindow [MainWindow.java:217] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:209)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:142)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:33:09,764 ERROR [main] f.w.MainWindow [MainWindow.java:217] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:209)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:142)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:33:23,399 ERROR [main] f.w.MainWindow [MainWindow.java:217] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:209)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:142)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:33:31,550 ERROR [main] f.w.MainWindow [MainWindow.java:217] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:209)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:142)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:33:40,301 ERROR [main] f.w.MainWindow [MainWindow.java:217] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:209)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:142)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:34:16,768 ERROR [main] f.w.MainWindow [MainWindow.java:217] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:209)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:142)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:34:30,263 ERROR [main] f.w.MainWindow [MainWindow.java:217] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:209)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:142)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:34:51,113 ERROR [main] f.w.MainWindow [MainWindow.java:217] -- Couldn't load the config.
+java.nio.file.NoSuchFileException: C:\crea\projets\whisperTextExtractor\config.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at fr.wtx.MainWindow.loadProperties(MainWindow.java:209)
+	at fr.wtx.MainWindow.<init>(MainWindow.java:142)
+	at fr.wtx.Main.main(Main.java:6)
+2024-05-20 13:35:27,209 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:35:27,297 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\crea\projets\whisperTest\src\main\resources\moon.wav -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:36:26,961 INFO [Thread-3] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:36:27,009 INFO [Thread-3] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\crea\projets\whisperTest\src\main\resources\moon.wav -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:37:28,217 INFO [Thread-6] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:37:28,245 INFO [Thread-6] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:37:47,954 INFO [Thread-9] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:37:47,980 INFO [Thread-9] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:38:36,761 INFO [Thread-12] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:38:36,789 INFO [Thread-12] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\crea\projets\whisperTest\target\classes\weChooseToGoToTheMoon.wav -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:38:41,777 INFO [Thread-15] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:38:41,807 INFO [Thread-15] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\crea\projets\whisperTest\target\classes\weChooseToGoToTheMoon.wav -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:38:52,433 INFO [Thread-18] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:38:52,460 INFO [Thread-18] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\crea\projets\whisperTest\target\classes\weChooseToGoToTheMoon.wav -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:39:07,594 INFO [Thread-21] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:39:07,620 INFO [Thread-21] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\crea\projets\whisperTest\target\classes\weChooseToGoToTheMoon.wav -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:39:30,628 INFO [Thread-24] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:39:30,655 INFO [Thread-24] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\crea\projets\whisperTest\ggml-medium-q5_0.bin -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:39:50,089 INFO [Thread-27] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:39:50,117 INFO [Thread-27] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\crea\projets\whisperTest\src\main\resources\moonfull.wav -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:42:47,162 INFO [Thread-30] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:42:47,189 INFO [Thread-30] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:46:10,570 INFO [Thread-33] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:46:10,604 INFO [Thread-33] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:50:24,761 INFO [Thread-36] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:50:24,790 INFO [Thread-36] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:56:51,054 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:56:51,121 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 8000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-20 13:59:44,402 INFO [Thread-3] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-20 13:59:44,403 ERROR [Thread-3] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:182)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:499)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	... 9 common frames omitted
