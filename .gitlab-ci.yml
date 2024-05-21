@@ -1,0 +1,46 @@
+stages: 
+  - .pre
+  - build
+
+pre_config:
+  image: maven:3.9.6-eclipse-temurin-21
+  stage: .pre
+  script:
+      - VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:3.1.1:evaluate -Dexpression=project.version -q -DforceStdout)
+      - echo $VERSION
+      - ARTIFACT_ID=$(mvn org.apache.maven.plugins:maven-help-plugin:3.1.1:evaluate -Dexpression=project.artifactId -q -DforceStdout)
+      - echo $ARTIFACT_ID
+      - export FULL_NAME=$(echo "$ARTIFACT_ID"-"$VERSION")
+      - echo FULL_NAME=$FULL_NAME >> mesVariables.env      
+  artifacts:
+    paths:
+      - public
+    name: "artifacts"
+    reports:
+      dotenv: mesVariables.env
+
+build_win_artifacts:
+  image: maven:3.9.6-eclipse-temurin-21
+  stage: build
+  script:
+      - 'mvn clean install -P windows-pkg'
+      - 'ls target'
+      - 'mv target/${FULL_NAME}-windows ./${FULL_NAME}-windows'
+  artifacts:
+    name: $FULL_NAME-windows
+    paths:
+      - ${FULL_NAME}-windows/*
+    expire_in: 2 hours
+
+build_linux_artifacts:
+  image: maven:3.9.6-eclipse-temurin-21
+  stage: build
+  script:
+      - 'mvn clean install -Djavafx.platform=linux -P linux-pkg'
+      - 'ls target'
+      - 'mv target/${FULL_NAME}-linux ./${FULL_NAME}-linux'
+  artifacts:
+    name: $FULL_NAME-linux
+    paths:
+      - ${FULL_NAME}-linux/*
+    expire_in: 2 hours
