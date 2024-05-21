@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>whisperTextExtractor</groupId>
   <artifactId>whisperTextExtractor</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>whisperTextExtractor</name>
   	<properties>
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

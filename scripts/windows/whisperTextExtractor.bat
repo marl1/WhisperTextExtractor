@@ -1,1 +1,1 @@
-start "" "%~dp0\bin\javaw" -jar "%~dp0\jars\whisperTextExtractor-0.0.1-SNAPSHOT-jar-with-dependencies.jar"  && exit 0
+start "" "%~dp0\bin\javaw" -jar "%~dp0\jars\whisperTextExtractor-1.0.0-jar-with-dependencies.jar"  && exit 0
