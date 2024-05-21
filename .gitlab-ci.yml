@@ -30,7 +30,7 @@ build_win_artifacts:
     name: $FULL_NAME-windows
     paths:
       - ${FULL_NAME}-windows/*
-    expire_in: 2 hours
+    expire_in: never
 
 build_linux_artifacts:
   image: maven:3.9.6-eclipse-temurin-21
@@ -43,4 +43,4 @@ build_linux_artifacts:
     name: $FULL_NAME-linux
     paths:
       - ${FULL_NAME}-linux/*
-    expire_in: 2 hours
+    expire_in: never
