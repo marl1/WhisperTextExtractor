@@ -20,6 +20,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
@@ -27,13 +28,13 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.TitledBorder;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.github.weisj.darklaf.LafManager;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -57,8 +58,13 @@ public class MainWindow extends JFrame {
 	private JProgressBar progressBar;
 	
 	public MainWindow() {
-		
-		LafManager.install();
+		// select Look and Feel
+        try {
+			UIManager.setLookAndFeel("com.jtattoo.plaf.fast.FastLookAndFeel");
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+				| UnsupportedLookAndFeelException e) {
+			LOGGER.error("Couldn't look window theme.", e);
+		}
 	    this.setTitle("WhisperTextExtractor");
 	    this.setSize(600, 800);
 	    this.setLocationRelativeTo(null);
@@ -179,20 +185,40 @@ public class MainWindow extends JFrame {
 		progressBar.setIndeterminate(true);
 	    // Create a new thread for the conversion and extraction processes
 	    new Thread(() -> {
-	        File outputFile = new FileConvertor().convert(
-	                ffmpegPathTextField.getText(),
-	                ffprobePathTextField.getText(),
-	                audioOrVideoPathTextField.getText(),
-	                tempPathTextField.getText()
-	        );
+	        File outputFile;
+			try {
+				outputFile = new FileConvertor().convert(
+				        ffmpegPathTextField.getText(),
+				        ffprobePathTextField.getText(),
+				        audioOrVideoPathTextField.getText(),
+				        tempPathTextField.getText()
+				);
+			} catch (Exception e) {
+		        SwingUtilities.invokeLater(() -> progressText.setText("Error. Check FFmpeg/FFprobe executable path. Check you have writing permission on temp folder."));
+		        SwingUtilities.invokeLater(() -> progressBar.setIndeterminate(false));
+		        SwingUtilities.invokeLater(() -> progressBar.setValue(100));
+		        SwingUtilities.invokeLater(() -> textArea.setText(e.getMessage()));
+				JOptionPane.showMessageDialog(this, "Couldn't load FFmpeg. Check the paths are pointing on FFmpeg/FFprobes executables (not FOLDERS! Executables!). Also check you have writing permission on the temp folder.");
+				return;
+			}
 	        SwingUtilities.invokeLater(() -> progressText.setText("Extracting text..."));
 	        progressText.setText("Extracting text from audio...");
-	        String extractedText = new TextExtractor().extract(
-	                outputFile.toString(),
-	                languagesComboBox.getItemAt(languagesComboBox.getSelectedIndex()),
-	                translateCheckBox.isSelected(),
-	                modelPathTextField.getText()
-	        );
+	        String extractedText;
+			try {
+				extractedText = new TextExtractor().extract(
+				        outputFile.toString(),
+				        languagesComboBox.getItemAt(languagesComboBox.getSelectedIndex()),
+				        translateCheckBox.isSelected(),
+				        modelPathTextField.getText()
+				);
+			} catch (Exception e) {
+		        SwingUtilities.invokeLater(() -> progressText.setText("Error. Check paths."));
+		        SwingUtilities.invokeLater(() -> progressBar.setIndeterminate(false));
+		        SwingUtilities.invokeLater(() -> progressBar.setValue(100));
+		        SwingUtilities.invokeLater(() -> textArea.setText(e.getMessage()));
+				JOptionPane.showMessageDialog(this, "Error.");
+				return;
+			}
 
 	        // Update the text area on the Event Dispatch Thread
 	        SwingUtilities.invokeLater(() -> textArea.setText(extractedText));

@@ -27,10 +27,11 @@
 	    <artifactId>miglayout-swing</artifactId>
 	    <version>11.3</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.jtattoo/JTattoo -->
 	<dependency>
-	  <groupId>com.github.weisj</groupId>
-	  <artifactId>darklaf-core</artifactId>
-	  <version>3.0.2</version>
+	    <groupId>com.jtattoo</groupId>
+	    <artifactId>JTattoo</artifactId>
+	    <version>1.6.13</version>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
 	<dependency>

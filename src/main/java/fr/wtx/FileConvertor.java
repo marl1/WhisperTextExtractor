@@ -20,7 +20,7 @@ public class FileConvertor {
 						String ffprobePath,
 						String inputFilePath,
 						String outputFilePath
-												)  {
+												) throws Exception  {
 	
 		
 		File outputFile = Path.of(outputFilePath, "temp.wav").toFile();
@@ -37,7 +37,8 @@ public class FileConvertor {
 			  .addOutput(outputFile.toString() )   // Filename for the destination
 			    .setStrict(FFmpegBuilder.Strict.EXPERIMENTAL) // Allow FFmpeg to use experimental specs
 			  .setFormat("wav")
-			  .setAudioSampleRate(8000)
+			  .setAudioSampleRate(16000)
+			  .setAudioChannels(1)
 			 .setAudioCodec("pcm_s16le")
 			    .disableVideo()
 			  .done();
@@ -46,9 +47,10 @@ public class FileConvertor {
 	
 			// Run a one-pass encode
 			executor.createJob(builder).run();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			LOGGER.error("Error trying to load folders. Check all folder are corrects.", e);
+			throw e;
 		}
 		return outputFile;
 	}

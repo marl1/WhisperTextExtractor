@@ -571,3 +571,296 @@ Caused by: java.io.IOException: CreateProcess error=2, The system cannot find th
 	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:158)
 	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
 	... 9 common frames omitted
+2024-05-21 09:19:01,068 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:19:01,074 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:187)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 9 common frames omitted
+2024-05-21 09:22:24,596 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:22:24,599 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 9 common frames omitted
+2024-05-21 09:23:00,894 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:23:00,897 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 9 common frames omitted
+2024-05-21 09:23:48,796 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:23:48,799 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 9 common frames omitted
+2024-05-21 09:24:37,849 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:24:37,852 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 9 common frames omitted
+2024-05-21 09:25:27,989 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:25:27,992 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 9 common frames omitted
+2024-05-21 09:25:45,239 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:25:45,242 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 9 common frames omitted
+2024-05-21 09:25:54,683 INFO [Thread-1] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:25:54,683 ERROR [Thread-1] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 9 common frames omitted
+2024-05-21 09:26:33,851 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:26:33,855 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 9 common frames omitted
+2024-05-21 09:26:59,743 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:26:59,746 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 9 common frames omitted
+2024-05-21 09:29:11,915 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:29:11,919 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.io.IOException: Cannot run program "C:\tools\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at net.bramp.ffmpeg.RunProcessFunction.run(RunProcessFunction.java:37)
+	at net.bramp.ffmpeg.FFcommon.version(FFcommon.java:65)
+	at net.bramp.ffmpeg.FFmpeg.version(FFmpeg.java:31)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:95)
+	at net.bramp.ffmpeg.FFmpeg.<init>(FFmpeg.java:90)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:28)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 9 common frames omitted
+2024-05-21 09:31:16,604 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:31:16,987 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 8000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-21 09:31:24,279 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:31:24,333 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4d -strict experimental -f wav -vn -acodec pcm_s16le -ar 8000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-21 09:32:01,519 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:32:01,574 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4d -strict experimental -f wav -vn -acodec pcm_s16le -ar 8000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-21 09:32:01,604 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.lang.RuntimeException: java.io.IOException: C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe returned non-zero exit status. Check stdout.
+	at net.bramp.ffmpeg.job.SinglePassFFmpegJob.run(SinglePassFFmpegJob.java:44)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:48)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe returned non-zero exit status. Check stdout.
+	at net.bramp.ffmpeg.FFcommon.throwOnError(FFcommon.java:50)
+	at net.bramp.ffmpeg.FFcommon.run(FFcommon.java:112)
+	at net.bramp.ffmpeg.FFmpeg.run(FFmpeg.java:219)
+	at net.bramp.ffmpeg.FFmpeg.run(FFmpeg.java:237)
+	at net.bramp.ffmpeg.job.SinglePassFFmpegJob.run(SinglePassFFmpegJob.java:37)
+	... 3 common frames omitted
+2024-05-21 09:32:24,538 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:32:24,592 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4d -strict experimental -f wav -vn -acodec pcm_s16le -ar 8000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-21 09:32:24,622 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.lang.RuntimeException: java.io.IOException: C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe returned non-zero exit status. Check stdout.
+	at net.bramp.ffmpeg.job.SinglePassFFmpegJob.run(SinglePassFFmpegJob.java:44)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:48)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe returned non-zero exit status. Check stdout.
+	at net.bramp.ffmpeg.FFcommon.throwOnError(FFcommon.java:50)
+	at net.bramp.ffmpeg.FFcommon.run(FFcommon.java:112)
+	at net.bramp.ffmpeg.FFmpeg.run(FFmpeg.java:219)
+	at net.bramp.ffmpeg.FFmpeg.run(FFmpeg.java:237)
+	at net.bramp.ffmpeg.job.SinglePassFFmpegJob.run(SinglePassFFmpegJob.java:37)
+	... 3 common frames omitted
+2024-05-21 09:33:07,355 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:33:07,412 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4d -strict experimental -f wav -vn -acodec pcm_s16le -ar 8000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-21 09:33:07,441 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.lang.RuntimeException: java.io.IOException: C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe returned non-zero exit status. Check stdout.
+	at net.bramp.ffmpeg.job.SinglePassFFmpegJob.run(SinglePassFFmpegJob.java:44)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:48)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe returned non-zero exit status. Check stdout.
+	at net.bramp.ffmpeg.FFcommon.throwOnError(FFcommon.java:50)
+	at net.bramp.ffmpeg.FFcommon.run(FFcommon.java:112)
+	at net.bramp.ffmpeg.FFmpeg.run(FFmpeg.java:219)
+	at net.bramp.ffmpeg.FFmpeg.run(FFmpeg.java:237)
+	at net.bramp.ffmpeg.job.SinglePassFFmpegJob.run(SinglePassFFmpegJob.java:37)
+	... 3 common frames omitted
+2024-05-21 09:33:30,708 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:33:30,764 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4d -strict experimental -f wav -vn -acodec pcm_s16le -ar 8000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-21 09:33:54,337 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:33:54,395 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4d -strict experimental -f wav -vn -acodec pcm_s16le -ar 8000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-21 09:33:54,424 ERROR [Thread-0] f.w.FileConvertor [FileConvertor.java:51] -- Error trying to load folders. Check all folder are corrects.
+java.lang.RuntimeException: java.io.IOException: C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe returned non-zero exit status. Check stdout.
+	at net.bramp.ffmpeg.job.SinglePassFFmpegJob.run(SinglePassFFmpegJob.java:44)
+	at fr.wtx.FileConvertor.convert(FileConvertor.java:48)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe returned non-zero exit status. Check stdout.
+	at net.bramp.ffmpeg.FFcommon.throwOnError(FFcommon.java:50)
+	at net.bramp.ffmpeg.FFcommon.run(FFcommon.java:112)
+	at net.bramp.ffmpeg.FFmpeg.run(FFmpeg.java:219)
+	at net.bramp.ffmpeg.FFmpeg.run(FFmpeg.java:237)
+	at net.bramp.ffmpeg.job.SinglePassFFmpegJob.run(SinglePassFFmpegJob.java:37)
+	... 3 common frames omitted
+2024-05-21 09:34:54,402 INFO [Thread-3] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:34:54,431 INFO [Thread-3] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ar 8000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-21 09:34:54,586 ERROR [Thread-3] f.w.TextExtractor [TextExtractor.java:57] -- Couldn't open path to whisper model.
+java.io.IOException: Missing model file: C:\Users\User\Downloads\ggml-small.en.binw
+	at io.github.givimad.whisperjni.WhisperJNI.assertModelExists(WhisperJNI.java:495)
+	at io.github.givimad.whisperjni.WhisperJNI.init(WhisperJNI.java:84)
+	at io.github.givimad.whisperjni.WhisperJNI.init(WhisperJNI.java:72)
+	at fr.wtx.TextExtractor.extract(TextExtractor.java:55)
+	at fr.wtx.MainWindow.lambda$3(MainWindow.java:208)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-05-21 09:36:00,492 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:36:00,559 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ar 8000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-21 09:37:25,925 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:37:25,980 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\whatsapp.ogg -strict experimental -f wav -vn -acodec pcm_s16le -ac 1 -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-21 09:38:56,723 INFO [Thread-3] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:38:56,753 INFO [Thread-3] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ac 1 -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav
+2024-05-21 09:39:11,104 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -version
+2024-05-21 09:39:11,167 INFO [Thread-0] n.b.f.RunProcessFunction [RunProcessFunction.java:29] -- C:\outils\ffmpeg-2024-05-15-git-7b47099bc0-full_build\bin\ffmpeg.exe -y -v error -i C:\Users\User\Downloads\moonfull.mp4 -strict experimental -f wav -vn -acodec pcm_s16le -ac 1 -ar 16000 C:\crea\projets\whisperTextExtractor\temp.wav

@@ -24,7 +24,7 @@ public class TextExtractor {
 	private static final Logger LOGGER = LoggerFactory.getLogger(TextExtractor.class);	
 
 
-	public String extract(String wavToExtractFrom, String language, boolean mustTranslate, String modelPath) {
+	public String extract(String wavToExtractFrom, String language, boolean mustTranslate, String modelPath) throws Exception {
 	    System.out.println("Hello!");
 
 	    // Load platform binaries
@@ -32,7 +32,7 @@ public class TextExtractor {
 			WhisperJNI.loadLibrary();
 		} catch (IOException e) {
 			LOGGER.error("Couldn't load whisper.cpp.", e);
-			return null;
+			throw e;
 		}
 	    WhisperJNI.setLibraryLogger(null); // Capture/disable whisper.cpp log
 
@@ -45,7 +45,7 @@ public class TextExtractor {
 			samples = readFile(wavToExtractFrom);
 		} catch (UnsupportedAudioFileException | IOException | URISyntaxException e) {
 			LOGGER.error("Couldn't read wav file.", e);
-			return null;
+			throw e;
 		}
 	    System.out.println("Number of samples read: " + samples.length);
 
@@ -55,7 +55,7 @@ public class TextExtractor {
 			ctx = whisper.init(Path.of(modelPath));
 		} catch (IOException e) {
 			LOGGER.error("Couldn't open path to whisper model.", e);
-			return null;
+			throw e;
 		}
 	    if (ctx == null) {
 	        throw new RuntimeException("Failed to initialize Whisper context");
