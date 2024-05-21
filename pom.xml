@@ -76,45 +76,68 @@
 									</providerConfig>
 								</configuration>
 							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<!-- To generate a smallish jdk tailored to the app -->
-					    <groupId>org.moditect</groupId>
-					    <artifactId>moditect-maven-plugin</artifactId>
-					    <version>1.0.0.Final</version>
-					    <executions>
-					        <execution>
-					            <id>create-runtime-image</id>
-					            <phase>package</phase>
+							<execution>
+					            <id>call-jdeps</id>
+								<phase>prepare-package</phase>
 					            <goals>
-					                <goal>create-runtime-image</goal>
+					                <goal>jdeps</goal>
 					            </goals>
 					            <configuration>
-					                <modulePath>${project.build.directory}${file.separator}jdkCache${file.separator}ADOPTIUM_21u_2024-01-21-02-59_windows_x64_hotspot${file.separator}jmods</modulePath>
-					                <modules>
+					                <output>${project.build.directory}${file.separator}jdeps.out</output>
+					                <options>
+					                    <option>${project.build.directory}${file.separator}${project.build.finalName}.jar</option>
+					                </options>
+					            </configuration>
+					        </execution>
+					        <execution>
+					            <id>call-jlink</id>
+								<phase>package</phase>
+					            <goals>
+					                <goal>jlink</goal>
+					            </goals>
+					            <configuration>
+					                <jdepsReportPath>${project.build.directory}${file.separator}jdeps.out</jdepsReportPath>
+					                <output>${project.build.directory}${file.separator}${project.name}-${project.version}-windows</output>
+					                <modulePaths>
+					                    <path>${project.build.directory}${file.separator}jdkCache${file.separator}ADOPTIUM_21u_2024-01-21-02-59_windows_x64_hotspot${file.separator}jmods</path>
+					                </modulePaths>
+					                <addModules>
 					                    <module>java.base</module>
 					                    <module>java.desktop</module>
 					                    <module>java.naming</module>
-					                </modules>
-					                <launcher>
-										<module>fr.wtx</module>
-										<mainClass>fr.wtx.Main</mainClass>
-					                </launcher>
-					                <compression>2</compression>
-					                <noHeaderFiles>true</noHeaderFiles>
-					                <stripDebug>true</stripDebug>
-					                <noManPages>true</noManPages>
-					                <outputDirectory>${project.build.directory}/${project.name}-${project.version}-windows</outputDirectory>
-					                <jarInclusionPolicy>APP_WITH_DEPENDENCIES</jarInclusionPolicy>
+					                </addModules>
+					                <options>
+					                    <option>--compress=2</option>
+					                    <option>--no-header-files</option>
+					                    <option>--no-man-pages</option>
+					                </options>
 					            </configuration>
 					        </execution>
-					    </executions>
+						</executions>
 					</plugin>
 					<plugin>
 						<artifactId>maven-resources-plugin</artifactId>
 						<version>3.3.1</version>
 						<executions>
+							<execution>
+								<id>copy-fat-jar</id>
+								<phase>package</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<resources>
+										<resource>
+											<directory>${basedir}/target</directory>
+									        <includes>
+									            <include>${project.name}-${project.version}-jar-with-dependencies.jar</include>
+									        </includes>
+											<filtering>false</filtering>
+										</resource>
+									</resources>
+									<outputDirectory>${basedir}/target/${project.name}-${project.version}-windows/jars</outputDirectory>
+								</configuration>
+							</execution>
 							<execution>
 								<id>copy-scripts</id>
 								<phase>package</phase>
@@ -122,13 +145,13 @@
 									<goal>copy-resources</goal>
 								</goals>
 								<configuration>
-									<outputDirectory>${basedir}/target/${project.name}-${project.version}-windows</outputDirectory>
 									<resources>
 										<resource>
 											<directory>scripts/windows</directory>
 											<filtering>false</filtering>
 										</resource>
 									</resources>
+									<outputDirectory>${basedir}/target/${project.name}-${project.version}-windows</outputDirectory>
 								</configuration>
 							</execution>
 						</executions>
@@ -166,44 +189,69 @@
 									</providerConfig>
 								</configuration>
 							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-					    <groupId>org.moditect</groupId>
-					    <artifactId>moditect-maven-plugin</artifactId>
-					    <version>1.0.0.Final</version>
-					    <executions>
 					        <execution>
-					            <id>create-runtime-image</id>
-					            <phase>package</phase>
+					            <id>call-jdeps</id>
+								<phase>prepare-package</phase>
 					            <goals>
-					                <goal>create-runtime-image</goal>
+					                <goal>jdeps</goal>
 					            </goals>
 					            <configuration>
-					                <modulePath>${project.build.directory}${file.separator}jdkCache${file.separator}ADOPTIUM_21u_2024-01-21-02-59_linux_x64_hotspot${file.separator}jmods</modulePath>
-					                <modules>
+					                <output>${project.build.directory}${file.separator}jdeps.out</output>
+					                <options>
+					                    <option>${project.build.directory}${file.separator}${project.build.finalName}.jar</option>
+					                </options>
+					            </configuration>
+					        </execution>
+					        <execution>
+								<!--  same as dashdash output C:\crea\projets\whisperTextExtractor\target\preparedJDK dashdash compress=2 dashdash no-header-files dashdash no-man-pages dashdash module-path C:\outils\java\jdk\ADOPTIUM_21u_2024-01-21-02-59_windows_x64_hotspot\jmods dashdash add-modules java.base,java.desktop,java.compiler -->
+					            <id>call-jlink</id>
+								<phase>package</phase>
+					            <goals>
+					                <goal>jlink</goal>
+					            </goals>
+					            <configuration>
+					                <jdepsReportPath>${project.build.directory}${file.separator}jdeps.out</jdepsReportPath>
+					                <output>${project.build.directory}${file.separator}preparedJDK-linux</output>
+					                <modulePaths>
+					                    <path>${project.build.directory}${file.separator}jdkCache${file.separator}ADOPTIUM_21u_2024-01-21-02-59_linux_x64_hotspot${file.separator}jmods</path>
+					                </modulePaths>
+					                <addModules>
 					                    <module>java.base</module>
 					                    <module>java.desktop</module>
 					                    <module>java.naming</module>
-					                </modules>
-					                <launcher>
-										<module>module-info.java</module>
-										<mainClass>fr.wtx.Main</mainClass>
-					                </launcher>
-					                <compression>2</compression>
-					                <noHeaderFiles>true</noHeaderFiles>
-					                <stripDebug>true</stripDebug>
-					                <noManPages>true</noManPages>
-					                <outputDirectory>${project.build.directory}/${project.name}-${project.version}-linux</outputDirectory>
-					                <jarInclusionPolicy>APP_WITH_DEPENDENCIES</jarInclusionPolicy>
+					                </addModules>
+					                <options>
+					                    <option>--compress=2</option>
+					                    <option>--no-header-files</option>
+					                    <option>--no-man-pages</option>
+					                </options>
 					            </configuration>
 					        </execution>
-					    </executions>
+						</executions>
 					</plugin>
 					<plugin>
 						<artifactId>maven-resources-plugin</artifactId>
 						<version>3.3.1</version>
 						<executions>
+							<execution>
+								<id>copy-fat-jar</id>
+								<phase>package</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<resources>
+										<resource>
+											<directory>${basedir}/target</directory>
+									        <includes>
+									            <include>${project.name}-${project.version}-jar-with-dependencies.jar</include>
+									        </includes>
+											<filtering>false</filtering>
+										</resource>
+									</resources>
+									<outputDirectory>${basedir}/target/${project.name}-${project.version}-linux/jars</outputDirectory>
+								</configuration>
+							</execution>
 							<execution>
 								<id>copy-scripts</id>
 								<phase>package</phase>
@@ -228,44 +276,53 @@
   </profiles>
   <build>
 	  <plugins>
-			  <plugin>
-			      <!-- Build an executable JAR wihtout dependencies included -->
-			      <groupId>org.apache.maven.plugins</groupId>
-			      <artifactId>maven-jar-plugin</artifactId>
-			      <version>3.1.0</version>
-			      <configuration>
-			        <archive>
-			          <manifest>
-			            <addClasspath>true</addClasspath>
-			            <mainClass>fr.wtx.Main</mainClass>
-			          </manifest>
-			        </archive>
-			      </configuration>
-		    </plugin>
-            <plugin>
-				<!-- fat jar -->
-	            <groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-assembly-plugin</artifactId>
-	            <version>3.1.0</version>
-	            <configuration>
-					<archive>
-						<manifest>
-		            		<mainClass>fr.wtx.Main</mainClass>
-		         		</manifest>
-					</archive>
-	                <descriptorRefs>
-	                    <descriptorRef>jar-with-dependencies</descriptorRef>
-	                </descriptorRefs>
-	            </configuration>
-            <executions>
-                <execution>
-                    <id>assemble-all</id>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>single</goal>
-                    </goals>
-                </execution>
-            </executions>
+		<plugin>
+	      <!-- Build an executable JAR wihtout dependencies included -->
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-jar-plugin</artifactId>
+	      <version>3.1.0</version>
+	      <executions>
+			<execution>
+				<id>default-jar</id> <!-- the name is important, it override the classifier attached to the package phase https://stackoverflow.com/questions/40964500 -->
+				<phase>prepare-package</phase>
+				<goals>
+					<goal>jar</goal>
+				</goals>
+			</execution>
+	      </executions>
+	      <configuration>
+	        <archive>
+	          <manifest>
+	            <addClasspath>true</addClasspath>
+	            <mainClass>fr.wtx.Main</mainClass>
+	          </manifest>
+	        </archive>
+	      </configuration>
+	    </plugin>
+        <plugin>
+			<!-- fat jar -->
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-assembly-plugin</artifactId>
+	        <version>3.1.0</version>
+	        <configuration>
+				<archive>
+					<manifest>
+	            		<mainClass>fr.wtx.Main</mainClass>
+	         		</manifest>
+				</archive>
+	            <descriptorRefs>
+	                <descriptorRef>jar-with-dependencies</descriptorRef>
+	            </descriptorRefs>
+	        </configuration>
+		    <executions>
+		        <execution>
+		            <id>assemble-all</id>
+		            <phase>prepare-package</phase>
+		            <goals>
+		                <goal>single</goal>
+		            </goals>
+		     </execution>
+	    </executions>
         </plugin>
 	</plugins>
   </build>
