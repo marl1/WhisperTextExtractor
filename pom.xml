@@ -64,7 +64,6 @@
 									<goal>cache-jdk</goal>
 								</goals>
 								<configuration>
-									<jdkPathProperty>jlink.jdk.path</jdkPathProperty>
 									<jdkCachePath>${project.build.directory}${file.separator}jdkCache</jdkCachePath>
 									<provider>ADOPTIUM</provider>
 									<providerConfig>
